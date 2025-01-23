@@ -49,8 +49,8 @@ jobs:
 
           # Set generic parameters
           cloud = 'ds-devops-group'
-          user = os.getenv('CONF_USER')
-          token = os.getenv('CONF_TOKEN')
+          user = os.getenv('ATLASSIAN_USERNAME')
+          token = os.getenv('ATLASSIAN_API_TOKEN')
           workspace = os.getenv('GITHUB_WORKSPACE')
 
           if not workspace:
