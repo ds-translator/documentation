@@ -34,4 +34,5 @@ jobs:
         LOGIN: ${{ secrets.ATLASSIAN_USERNAME }}
         PASSWORD: ${{ secrets.ATLASSIAN_API_TOKEN }}
       run: |
+        python3 ./diagrams/cluster.py
         python3 ./publisher/main.py --login="$LOGIN" --password="$PASSWORD"

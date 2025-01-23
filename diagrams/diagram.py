@@ -44,7 +44,7 @@ class Repos:
         self.backend = Codecommit("Repo Backend Server")
         self.infra = Codecommit("Repo Terraform Infrastructure")
 
-with Diagram("AWS EKS Cluster", show=False):
+with Diagram("AWS EKS Cluster", filename="./images/diagram", outformat="png", show=False):
     
     user = Users("End Users")
     browser = Client("Web Browser")    
