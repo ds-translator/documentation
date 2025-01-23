@@ -35,5 +35,7 @@ jobs:
         LOGIN: ${{ secrets.ATLASSIAN_USERNAME }}
         PASSWORD: ${{ secrets.ATLASSIAN_API_TOKEN }}
       run: |
-        python3 ./diagrams/diagram.py
+        for script in ./diagrams/*.py; do
+          python3 "$script"
+        done
         python3 ./publisher/main.py --login="$LOGIN" --password="$PASSWORD"
