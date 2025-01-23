@@ -1,3 +1,5 @@
+# Specifications
+
 ## Project (method, breakdown, assignment, planning, ...)
 
 We will use JIRA for the project management. Each task will be assigned to the corresponding team mate. The other team mates will review the tasks and confirm it to the DONE stage.
