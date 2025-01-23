@@ -19,8 +19,8 @@ jobs:
             python -m pip install pandas python-dotenv markdown py-gfm atlassian-python-api
       - name: Sync with Confluence
         env: 
-          CONF_USER: ${{ secrets.ATLASSIAN_USERNAME }}
-          CONF_TOKEN: ${{ secrets.ATLASSIAN_API_TOKEN }}
+          CONF_USER: ${{ secrets.CONF_USER }}
+          CONF_TOKEN: ${{ secrets.CONF_TOKEN }}
         run: |
           import os
           from os.path import join
@@ -48,7 +48,7 @@ jobs:
           """
 
           # Set generic parameters
-          cloud = 'ds-devops-group'
+          cloud = '{your_cloud_id}'
           user = os.getenv('CONF_USER')
           token = os.getenv('CONF_TOKEN')
           workspace = os.getenv('GITHUB_WORKSPACE')
@@ -91,7 +91,7 @@ jobs:
               confluence = Confluence(
                   url = f"https://{cloud}.atlassian.net",
                   username=user,
-                  password=token)`
+                  password=token)
               try:
                   confluence.attach_file(image_path, name=None, content_type=None, page_id=page_to, title=None, space=None, comment=None)
                   return print("Uploaded image to Confluence")
@@ -99,9 +99,9 @@ jobs:
                   raise e
 
           # Read list of content to upload to Confluence
-          confluence_list = pd.read_csv(join(workspace, 'mapping.csv'), header='infer', sep=';')
+          confluence_list = pd.read_csv(join(workspace, 'docs/docs_for_confluence.csv'), header='infer', sep=';')
 
-          # Go through content to upload
+          # Go through contnet to upload
           for index, row in confluence_list.iterrows():
               if row['type'] == 'content':
                   file_path = join(workspace, row['path'])
@@ -115,4 +115,4 @@ jobs:
 
               else:
                   print("Content type is not recognized and therefore not uploaded to Confluence")
-        shell: python 
+        shell: python
