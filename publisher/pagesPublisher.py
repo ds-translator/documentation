@@ -52,7 +52,7 @@ def publishFolder(folder, login, password, parentPageID = None): # parentPageID 
                             newFileContent += line
                         
                     # create new page 
-                    pageIDforFileAttaching = createPage(title=str(entry.name), 
+                    pageIDforFileAttaching = createPage(title=str(prettify(entry.name)), 
                         content=markdown.markdown(newFileContent, extensions=['markdown.extensions.tables', 'fenced_code']), 
                         parentPageID = parentPageID, 
                         login=login, 
@@ -79,3 +79,6 @@ def publishFolder(folder, login, password, parentPageID = None): # parentPageID 
 
         else:
             logging.info("Found unknown type of entry (not file, not directory, not symlink) " + str(entry.path))
+
+def prettify(title):
+    return title[:-3].capitalize()
