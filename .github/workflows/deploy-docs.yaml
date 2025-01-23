@@ -115,4 +115,4 @@ jobs:
 
               else:
                   print("Content type is not recognized and therefore not uploaded to Confluence")
-        shell: python
+        shell: python 
