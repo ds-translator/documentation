@@ -22,8 +22,7 @@ jobs:
           CONF_USER: ${{ secrets.CONF_USER }}
           CONF_TOKEN: ${{ secrets.CONF_TOKEN }}
         run: |
-          echo "the user is"
-          echo "$CONF_USER"
+          
           import os
           from os.path import join
           import pandas as pd
@@ -33,7 +32,7 @@ jobs:
           from mdx_gfm import GithubFlavoredMarkdownExtension
 
           from atlassian import Confluence
-
+          print("the user is ${{ secrets.CONF_USER }}")
           """
           Every file upload requires a few steps: 
           1. Open the markdown file and read its content 
