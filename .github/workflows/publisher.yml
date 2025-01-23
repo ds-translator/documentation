@@ -31,7 +31,7 @@ jobs:
 
     - name: Publish MD files to the Confluence space
       env:
-        LOGIN: ${{secrets.confluence_login }}
-        PASSWORD: ${{secrets.confluence_password }}
+        LOGIN: ${{ secrets.ATLASSIAN_USERNAME }}
+        PASSWORD: ${{ secrets.ATLASSIAN_API_TOKEN }}
       run: |
         python3 ./publisher/main.py --login="$LOGIN" --password="$PASSWORD"
