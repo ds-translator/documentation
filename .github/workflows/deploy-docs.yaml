@@ -49,8 +49,8 @@ jobs:
 
           # Set generic parameters 
           cloud = 'ds-devops-group' 
-          user = ${{ secrets.ATLASSIAN_USERNAME }}
-          token = ${{ secrets.ATLASSIAN_API_TOKEN }}
+          user = '${{ secrets.ATLASSIAN_USERNAME }}'
+          token = '${{ secrets.ATLASSIAN_API_TOKEN }}'
           workspace = os.getenv('GITHUB_WORKSPACE')
 
           if not workspace:
