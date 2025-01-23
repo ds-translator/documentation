@@ -7,8 +7,7 @@ The 6 epics will be defined in JIRA, so that there will be a timeline overview.
 ## Source code (flow, review, validation,...)
 
 This project will use a workflow inspired by GitFlow.
-Our workflow is inspired from here:
-https://medium.com/@elaurichetoho/optimizing-your-git-workflow-best-practices-for-master-and-develop-branches-472b1738cc06
+Our workflow is inspired from here: https://medium.com/@elaurichetoho/optimizing-your-git-workflow-best-practices-for-master-and-develop-branches-472b1738cc06
 
 ### Branch structure
 
