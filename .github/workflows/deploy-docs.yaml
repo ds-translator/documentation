@@ -19,10 +19,9 @@ jobs:
             python -m pip install pandas python-dotenv markdown py-gfm atlassian-python-api
       - name: Sync with Confluence
         env: 
-          CONF_USER: ${{ secrets.CONF_USER }}
-          CONF_TOKEN: ${{ secrets.CONF_TOKEN }}
+          CONF_USER: ${{ secrets.ATLASSIAN_USERNAME }}
+          CONF_TOKEN: ${{ secrets.ATLASSIAN_API_TOKEN }}
         run: |
-          
           import os
           from os.path import join
           import pandas as pd
@@ -32,7 +31,7 @@ jobs:
           from mdx_gfm import GithubFlavoredMarkdownExtension
 
           from atlassian import Confluence
-          print("the user is ${{ secrets.CONF_USER }}")
+
           """
           Every file upload requires a few steps: 
           1. Open the markdown file and read its content 
