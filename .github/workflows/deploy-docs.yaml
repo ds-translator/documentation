@@ -66,6 +66,7 @@ jobs:
               # set base url
               url = f"https://{cloud}.atlassian.net/wiki/rest/api/content/{page_to}"
               print(url)
+              print(user)
               current = requests.get(url, auth=(user, token)).json()
               print(current)
               html = markdown(open_markdown_file(file_path), extensions=[GithubFlavoredMarkdownExtension()])
