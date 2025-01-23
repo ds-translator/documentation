@@ -103,6 +103,7 @@ jobs:
 
           # Go through content to upload
           for index, row in confluence_list.iterrows():
+              print(row['type'])
               if row['type'] == 'content':
                   file_path = join(workspace, row['path'])
                   page_to = row['page_to']
