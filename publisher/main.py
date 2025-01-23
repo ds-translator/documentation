@@ -7,7 +7,6 @@ from pagesPublisher import publishFolder
 
 logging.basicConfig(level=logging.INFO)
 
-
 # Parse arguments with LOGIN and PASSWORD for Confluence
 parser = argparse.ArgumentParser()
 parser.add_argument('--login', help='Login with "" is mandatory', required=True)
