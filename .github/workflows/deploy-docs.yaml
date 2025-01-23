@@ -22,6 +22,8 @@ jobs:
           CONF_USER: ${{ secrets.CONF_USER }}
           CONF_TOKEN: ${{ secrets.CONF_TOKEN }}
         run: |
+          echo "the user is"
+          echo "$CONF_USER"
           import os
           from os.path import join
           import pandas as pd
