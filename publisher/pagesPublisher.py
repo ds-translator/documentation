@@ -24,7 +24,7 @@ def publishFolder(folder, login, password, parentPageID = None): # parentPageID 
             # publish files in the current folder
             publishFolder(folder=entry.path, login=login, password=password, parentPageID=currentPageID)
             
-        elif entry.is_file():
+        elif entry.is_file(): 
             logging.info("Found file: " + str(entry.path))
 
             if str(entry.path).lower().endswith('.md'): # chech for correct file extension
