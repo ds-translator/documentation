@@ -12,7 +12,7 @@ The 6 epics based on weeks will be defined in JIRA, so that there will be a time
 
 ## Source code (flow, review, validation,...)
 
-### GitHub with GitFlow
+### GitHub with GitFlow 
 This project will use a workflow inspired by GitFlow and be hosted on GitHub.
 Our workflow is inspired from here: https://medium.com/@elaurichetoho/optimizing-your-git-workflow-best-practices-for-master-and-develop-branches-472b1738cc06
 
