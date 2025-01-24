@@ -82,9 +82,13 @@ The project needs a VPC with two availability zones for the EKS cluster, both pr
 
 We use AWS EKS for easy deployment of the containers and orchestration.
 
-### GPU nodegroups 
+### EC2 and GPU nodegroups 
 
 There are different nodegroups as we have to use specific GPU nodes for the ML-containers.
+
+### ALB/ELB
+
+A load balancer will direct the incoming traffic to the cluster services.
 
 ### Container
 
@@ -97,10 +101,6 @@ There are different nodegroups as we have to use specific GPU nodes for the ML-c
 **Translation** Libretranslate (Docker container)
 
 **Text-To-Speech** Tortoise-TTS (Docker container)
-
-### ALB/ELB
-
-A load balancer will direct the incoming traffic to the cluster services.
 
 ## Security (AAA, code, traffic, instances, ...)
 
