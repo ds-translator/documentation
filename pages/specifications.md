@@ -1,48 +1,8 @@
-# Specifications
-
 # System Architecture
 
 ![Diagram](/images/diagram.png)
 
-## Components
-
-**Frontend:** JS-based web interface for user interaction (Docker container)
-
-**Backend:** FastAPI-Server with Python as logical controller (Docker container)
-
-**Speech-To-Text:** Whisper (Docker container)
-
-**Translation** Libretranslate (Docker container)
-
-**Text-To-Speech** Tortoise-TTS (Docker container)
-
-**CI/CD Pipeline:** GitHub Actions for automated testing and deployment.
-
-**Monitoring:** AWS CloudWatch and Grafana for metrics, logs, and alerts.
-
-**Backup**: We strictly use repositories for all files. Everything is defined as code. To provide disaster recovery, all repositories are backed up in S3 buckets with cross regional replication.
-
-## Solutions Stack
-
-The project will be deployed to AWS.
-
-Cloud: AWS (EKS, ALB, S3, CloudWatch, Grafana)
-
-Containerization: Docker and Docker Hub
-
-Orchestration: Managed Kubernetes cluster (EKS)
-
-SCM: GitHub
-
-CI/CD: GitHub Actions
-
-Communication: HTTPS, FastAPI
-
-Frontend: JavaScript with websockets
-
-Backend: Python with FastAPI-server
-
-## Interrelationships
+# Solutions Stack / Components
 
 ## Project (method, breakdown, assignment, planning, ...)
 
@@ -52,7 +12,8 @@ The 6 epics based on weeks will be defined in JIRA, so that there will be a time
 
 ## Source code (flow, review, validation,...)
 
-This project will use a workflow inspired by GitFlow.
+### GitHub with GitFlow
+This project will use a workflow inspired by GitFlow and be hosted on GitHub.
 Our workflow is inspired from here: https://medium.com/@elaurichetoho/optimizing-your-git-workflow-best-practices-for-master-and-develop-branches-472b1738cc06
 
 ### Branch structure
@@ -87,7 +48,7 @@ Naming convention: hotfix/hotfix-name
 
 Usage: Created from master to address critical issues in production.
 
-Merging: Merged into both master and develop to ensure the fix is included in both the production and the next release.
+Merging: Merged into both main and develop to ensure the fix is included in both the production and the next release.
 
 ## CI/CD (development cycle stages, jobs, environments)
 
@@ -125,6 +86,18 @@ We use AWS EKS for easy deployment of the containers and orchestration.
 
 There are different nodegroups as we have to use specific GPU nodes for the ML-containers.
 
+### Container
+
+**Frontend:** JS-based web interface for user interaction (Docker container)
+
+**Backend:** FastAPI-Server with Python as logical controller (Docker container)
+
+**Speech-To-Text:** Whisper (Docker container)
+
+**Translation** Libretranslate (Docker container)
+
+**Text-To-Speech** Tortoise-TTS (Docker container)
+
 ### ALB/ELB
 
 A load balancer will direct the incoming traffic to the cluster services.
@@ -143,4 +116,8 @@ A managed Grafana instance will collect all metrics and send alert in case of er
 
 ## Continuity & Recovery (redundancy, failover, backup, BCP/DRP)
 
+### Redundancy and Backup
+
 For redundancy it should be possible to point the domains DNS to a load balancer in another region. If the regional datacenter burns down, we could still continue service from another region.
+
+We strictly use repositories for all files. Everything is defined as code. To provide disaster recovery, all repositories are backed up in S3 buckets with cross regional replication.
