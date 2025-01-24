@@ -47,7 +47,7 @@ Merging: Merged into both master and develop to ensure the fix is included in bo
 
 ## CI/CD (development cycle stages, jobs, environments)
 
-This project uses GitHub Actions with Docker Hub to build the docker images for the K8s cluster.
+This project uses GitHub Actions with workflows with Docker Hub to build the docker images for the K8s cluster.
 
 We will deploy to the staging environment automatically, but deploy to production manually from the console.
 

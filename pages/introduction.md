@@ -61,9 +61,9 @@ The project will showcase DevOps capabilities, including:
 **Subject: monitor and collect system analysis data in its entirety and in the various environments to detect malfunctions and allow for improvement.**
 
 > Deliverables:
-> * Centralized and integrated solution that watches over the entire system
-> * Accessible dashboards
-> * Alert system in operation
+> - Centralized and integrated solution that watches over the entire system
+> - Accessible dashboards
+> - Alert system in operation
 
 ### Week 9 (24.02.-02.03.), Step 6 prep: Presentation, Demo, and Pre-defense
 
