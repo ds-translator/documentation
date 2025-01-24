@@ -1,10 +1,34 @@
 # Specifications
 
+# System Architecture
+
+![Diagram](/images/diagram.png)
+
+## Components
+
+**Frontend:** JS-based web interface for user interaction (Docker container)
+
+**Backend:** FastAPI-Server with Python as logical controller (Docker container)
+
+**Speech-To-Text:** Whisper (Docker container)
+
+**Translation** Libretranslate (Docker container)
+
+**Text-To-Speech** Tortoise-TTS (Docker container)
+
+**CI/CD Pipeline:** GitHub Actions for automated testing and deployment.
+
+**Monitoring:** AWS CloudWatch and Grafana for metrics, logs, and alerts.
+
+**Backup**: We strictly use repositories for all files. Everything is defined as code. To provide disaster recovery, all repositories are backed up in S3 buckets with cross regional replication.
+
+## Interrelationships
+
 ## Project (method, breakdown, assignment, planning, ...)
 
 We will use JIRA for the project management. Each task will be assigned to the corresponding team mate. The other team mates will review the tasks and confirm it to the DONE stage.
 
-The 6 epics will be defined in JIRA, so that there will be a timeline overview.
+The 6 epics based on weeks will be defined in JIRA, so that there will be a timeline overview.
 
 ## Source code (flow, review, validation,...)
 
@@ -31,7 +55,7 @@ Merging: Merged back into develop when the feature is complete and tested.
 
 ### Release Branches
 
-Naming convention: `release/vx.x.x`
+Naming convention: `release/x.x.x`
 
 Usage: Created from develop when preparing for a new release. Allows for minor bug fixes and preparation for release without affecting ongoing development.
 
