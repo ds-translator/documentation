@@ -101,7 +101,10 @@ with Diagram("Project Architecture", filename="./images/diagram", outformat="png
             >> services.tts >> Edge(style='invis')
 
     with Cluster("AWS Region 2"):
-        backup_s3 = S3("Backup")
+        backup_region2_s3 = S3("Backup")
+
+    with Cluster("AWS Region 3"):
+        backup_region3_s3 = S3("Backup")        
 
     repos.frontend >> github_actions_frontend >> images.frontend >> ng.frontend  # Frontend UI
     repos.backend >> github_actions_backend >> images.backend >> ng.backend  # Backend Server
@@ -110,11 +113,13 @@ with Diagram("Project Architecture", filename="./images/diagram", outformat="png
     images.translate >> ng.libretranslate
     images.tts >> ng.tts
 
-    repos.frontend >> backup_s3  # Frontend UI
-    repos.backend >> backup_s3
-    repos.infra >> backup_s3
+    repos.frontend >> backup_region2_s3  # Frontend UI
+    repos.backend >> backup_region2_s3
+    repos.infra >> backup_region2_s3
 
-    monitoring >> backup_s3
+    monitoring >> backup_region2_s3
+    
+    backup_region2_s3 >> backup_region3_s3    
 
     # Linking the Terraform infrastructure repo to the cluster indirectly
     devops_engineer >> repos.infra >> terraform >> cluster_entry  # Representing that the Terraform manages broader infrastructure
