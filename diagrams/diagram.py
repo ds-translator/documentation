@@ -14,6 +14,10 @@ from diagrams.oci.devops import APIService
 from diagrams.aws.storage import SimpleStorageServiceS3 as S3
 from diagrams.aws.management import AmazonManagedPrometheus as Prometheus, AmazonManagedGrafana as Grafana
 
+graph_attr = {
+     "pad":"0"
+ }
+
 class Services:
     def __init__(self):
         self.http = APIService("HTTP")
@@ -44,7 +48,8 @@ class Repos:
         self.backend = Codecommit("Repo Backend Server")
         self.infra = Codecommit("Repo Terraform Infrastructure")
 
-with Diagram("Project Architecture", filename="./images/diagram", outformat="png", show=False):
+with Diagram("Project Architecture", filename="./images/diagram", outformat="png", show=False, graph_attr=graph_attr
+):
     
     user = Users("End Users")
     browser = Client("Web Browser")    

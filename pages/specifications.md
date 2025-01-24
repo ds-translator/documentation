@@ -22,6 +22,26 @@
 
 **Backup**: We strictly use repositories for all files. Everything is defined as code. To provide disaster recovery, all repositories are backed up in S3 buckets with cross regional replication.
 
+## Solutions Stack
+
+The project will be deployed to AWS.
+
+Cloud: AWS (EKS, ALB, S3, CloudWatch, Grafana)
+
+Containerization: Docker and Docker Hub
+
+Orchestration: Managed Kubernetes cluster (EKS)
+
+SCM: GitHub
+
+CI/CD: GitHub Actions
+
+Communication: HTTPS, FastAPI
+
+Frontend: JavaScript with websockets
+
+Backend: Python with FastAPI-server
+
 ## Interrelationships
 
 ## Project (method, breakdown, assignment, planning, ...)
@@ -71,52 +91,56 @@ Merging: Merged into both master and develop to ensure the fix is included in bo
 
 ## CI/CD (development cycle stages, jobs, environments)
 
+### GitHub Actions, Docker Hub
+
 This project uses GitHub Actions with workflows with Docker Hub to build the docker images for the K8s cluster.
 
 We will deploy to the staging environment automatically, but deploy to production manually from the console.
 
 ## Data (location, replication/distribution, links, access, caching, ...)
 
+### S3
+
+The data will be backed up to S3 buckets with cross regional replication.
+
 ## Storage (type - DBMS / Block / File / Object, IOPS, volume, Backup, ...)
+
+### S3
 
 All definitions will be available as code in the GitHub repo. These repos will be backed up to S3 buckets in two regions.
 
 ## Network (location, segmentation, addressing, routing, filtering, ...)
 
-The project needs a VPC with two availability zones for the EKS cluster, both private and public to access Docker Hub.
+### VPC
+
+The project needs a VPC with two availability zones for the EKS cluster, both private and public to access images from Docker Hub.
 
 ## Compute (nodes, autoscaling, containers, orchestration,...)
 
-We use AWS EKS for deployment of the containers and orchestration.
+### EKS
+
+We use AWS EKS for easy deployment of the containers and orchestration.
+
+### GPU nodegroups 
 
 There are different nodegroups as we have to use specific GPU nodes for the ML-containers.
+
+### ALB/ELB
 
 A load balancer will direct the incoming traffic to the cluster services.
 
 ## Security (AAA, code, traffic, instances, ...)
 
+### IAM roles and policies
+
 One IAM role will be responsible for the deployment and management of the cluster, and each DevOps team mate can assume this role.
 
 ## Observability (metrics, logs, traces, alerts)
+
+### Cloudwatch, Grafana, Prometheus
 
 A managed Grafana instance will collect all metrics and send alert in case of errors during the build process, cluster runtime or application error.
 
 ## Continuity & Recovery (redundancy, failover, backup, BCP/DRP)
 
 For redundancy it should be possible to point the domains DNS to a load balancer in another region. If the regional datacenter burns down, we could still continue service from another region.
-
-## Context
-
-The project is a 6-week DevOps initiative to develop and deploy a speech-to-speech translation webservice. The service will allow users to input speech in one language and receive translated speech in another language. The project will showcase DevOps capabilities, including CI/CD pipelines, cloud infrastructure management, containerization, and monitoring.
-
-## Content strategy roadmap
-
-Environment and Framework
-
-Technology Stack: AWS (EC2, EKS, S3, CloudWatch), Docker, Kubernetes, GitHub Actions, Python/FastAPI (backend), JavaScript (frontend).
-
-Team: 3 DevOps Engineers
-
-Timeline: 6 weeks (deliver a fully functional production-ready service).
-
-Business Value: The service targets industries like healthcare, education, and customer support, enabling real-time multilingual communication.
