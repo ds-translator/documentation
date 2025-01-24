@@ -12,6 +12,8 @@ The project will showcase DevOps capabilities, including:
 
 Its expected to define everything by code (IaC), to have a reproducible and sustainable solution with easy maintenance.
 
+# Simplified schematics
+
 ![Diagram](/images/simplified.png)
 
 ## Stakeholders
@@ -31,6 +33,7 @@ Its expected to define everything by code (IaC), to have a reproducible and sust
 **Primary Objective:** Deliver a scalable, secure, and high-availability speech-to-speech translation webservice within 6 weeks.
 
 **Specific Goals:**
+
 - Implement a microservices architecture using Docker and Kubernetes.
 - Build automated CI/CD pipelines for seamless deployment.
 - Ensure 99.9% uptime for the production environment.
@@ -43,15 +46,10 @@ Its expected to define everything by code (IaC), to have a reproducible and sust
 The project will deliver a speech-to-speech translation webservice with the following features:
 
 - Core Functionality: Translate user speech from one language to another.
-
 - Deployment: Hosted on AWS with a microservices architecture.
-
 - Scalability: Auto-scaling for both frontend and backend.
-
 - Monitoring: Real-time monitoring of pipelines, staging, and production environments.
-
 - Security: Encrypted connections (TLS), private subnets, and role-based access control.
-
 - Self-Sustained: No reliance on external translation APIs; all services built in-house.
 
 ### Phase 1: Setup
@@ -84,7 +82,8 @@ Deliverables: Production environment live, monitored, and scalable.
 Access the service via a web interface.
 
 **Developers:** Easy integration with CI/CD pipelines.
-Clear API documentation for backend services.
+Feedback on errors during build process.
+VCS and backup of code.
 
 **Customer:** Real-time notifications for downtime or failures.
 Scalable infrastructure to handle user growth.
@@ -93,7 +92,7 @@ Scalable infrastructure to handle user growth.
 
 - Performance: Response time < 2 seconds under normal load.
 
-- Scalability: Support up to 10,000 concurrent users.
+- Scalability: automatically scale up the nodegroups during high load.
 
 - Security: TLS encryption, private subnets, and role-based access control.
 
