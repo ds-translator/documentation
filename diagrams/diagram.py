@@ -75,6 +75,7 @@ with Diagram("Project Architecture", filename="./images/diagram", outformat="png
         devops_engineer >> iam_role
 
         with Cluster("Monitoring"):
+            monitoring = Blank("")
             prometheus = Prometheus("Prometheus")
             grafana = Grafana("Grafana")
     
@@ -112,6 +113,8 @@ with Diagram("Project Architecture", filename="./images/diagram", outformat="png
     repos.frontend >> backup_s3  # Frontend UI
     repos.backend >> backup_s3
     repos.infra >> backup_s3
+
+    monitoring >> backup_s3
 
     # Linking the Terraform infrastructure repo to the cluster indirectly
     devops_engineer >> repos.infra >> terraform >> cluster_entry  # Representing that the Terraform manages broader infrastructure
