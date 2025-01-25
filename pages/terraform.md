@@ -1,5 +1,9 @@
 This page will provide a few resources for using terraform within the scope of this project.
 
+## Simplified layout
+
+![Terraform](/images/terraform.png)
+
 ### Multiple environments with Terraform
 - [How to manage multiple environments with Terraform](https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-32c7bc5d692)
   - [Part 1: Workspaces](https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-using-workspaces-98680d89a03e)
