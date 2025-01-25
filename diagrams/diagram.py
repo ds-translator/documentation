@@ -1,15 +1,12 @@
 from diagrams import Diagram, Cluster, Edge
-from diagrams.aws.compute import EKS, ECS
 from diagrams.aws.network import ELB, VPC
 from diagrams.aws.devtools import Codecommit
 from diagrams.onprem.container import Docker
 from diagrams.generic.blank import Blank
-from diagrams.onprem.client import Client, User, Users
+from diagrams.onprem.client import Client, Users
 from diagrams.onprem.ci import GithubActions
-from diagrams.aws.security import IdentityAndAccessManagementIamAddOn
 from diagrams.oci.security import IDAccess
 from diagrams.onprem.iac import Terraform
-from diagrams.oci.compute import BM
 from diagrams.oci.devops import APIService
 from diagrams.aws.storage import SimpleStorageServiceS3 as S3
 from diagrams.aws.management import AmazonManagedPrometheus as Prometheus, AmazonManagedGrafana as Grafana

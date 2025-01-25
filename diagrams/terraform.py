@@ -1,11 +1,7 @@
 from diagrams import Diagram, Cluster, Edge
 from diagrams.onprem.client import User
-from diagrams.aws.storage import SimpleStorageServiceS3 as S3
-from diagrams.oci.network import LoadBalancer
-from diagrams.oci.compute import OKE, Container
 from diagrams.onprem.iac import Terraform
 from diagrams.oci.security import IDAccess
-from diagrams.oci.compute import VM
 from diagrams.oci.storage import FileStorage
 from diagrams.oci.database import DatabaseService as Infrastructure
 
