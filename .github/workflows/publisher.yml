@@ -28,7 +28,11 @@ jobs:
         sudo apt-get install graphviz -y
         ls -la
         python -m pip install --upgrade pip
+        pip install ruff pymarkdownlnt
         pip install -r ./requirements.txt
+    - name: Check Python syntax
+      run: |
+        ruff check ./diagrams
     - name: Check MD syntax
       run: |
         pymarkdown -d MD041,MD013,MD024 scan pages
