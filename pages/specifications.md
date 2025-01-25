@@ -1,22 +1,23 @@
-# System Architecture
+## System Architecture
 
 ![Diagram](/images/diagram.png)
 
-# Solutions Stack / Components
+## Solutions Stack / Components
 
-## Project (method, breakdown, assignment, planning, ...)
+### Project (method, breakdown, assignment, planning, ...)
 
 We will use JIRA for the project management. Each task will be assigned to the corresponding team mate. The other team mates will review the tasks and confirm it to the DONE stage.
 
 The 6 epics based on weeks will be defined in JIRA, so that there will be a timeline overview.
 
-## Source code (flow, review, validation,...)
+### Source code (flow, review, validation,...)
 
-### GitHub with GitFlow 
+#### GitHub with GitFlow
+
 This project will use a workflow inspired by GitFlow and be hosted on GitHub.
 Our workflow is inspired from here: <https://medium.com/@elaurichetoho/optimizing-your-git-workflow-best-practices-for-master-and-develop-branches-472b1738cc06>
 
-### Branch structure
+#### Branch structure
 
 `main` branch: The final production stage branch. We will deploy to production from here.
 
@@ -26,7 +27,7 @@ Our workflow is inspired from here: <https://medium.com/@elaurichetoho/optimizin
 
 `feature` branch: The local developing branch. Used for local development.
 
-### Feature Branches
+#### Feature Branches
 
 Naming convention: `feature/feature-name`
 
@@ -34,7 +35,7 @@ Usage: Created from the develop branch for new features or enhancements.
 
 Merging: Merged back into develop when the feature is complete and tested.
 
-### Release Branches
+#### Release Branches
 
 Naming convention: `release/x.x.x`
 
@@ -42,7 +43,7 @@ Usage: Created from develop when preparing for a new release. Allows for minor b
 
 Merging: Merged into both master and develop branches when ready for production.
 
-### Hotfix Branches
+#### Hotfix Branches
 
 Naming convention: hotfix/hotfix-name
 
@@ -50,47 +51,47 @@ Usage: Created from master to address critical issues in production.
 
 Merging: Merged into both main and develop to ensure the fix is included in both the production and the next release.
 
-## CI/CD (development cycle stages, jobs, environments)
+### CI/CD (development cycle stages, jobs, environments)
 
-### GitHub Actions, Docker Hub
+#### GitHub Actions, Docker Hub
 
 This project uses GitHub Actions with workflows with Docker Hub to build the docker images for the K8s cluster.
 
 We will deploy to the staging environment automatically, but deploy to production manually from the console.
 
-## Data (location, replication/distribution, links, access, caching, ...)
+### Data (location, replication/distribution, links, access, caching, ...)
 
-### S3
+#### S3
 
 The data will be backed up to S3 buckets with cross regional replication.
 
-## Storage (type - DBMS / Block / File / Object, IOPS, volume, Backup, ...)
+### Storage (type - DBMS / Block / File / Object, IOPS, volume, Backup, ...)
 
-### S3
+#### S3
 
 All definitions will be available as code in the GitHub repo. These repos will be backed up to S3 buckets in two regions.
 
-## Network (location, segmentation, addressing, routing, filtering, ...)
+### Network (location, segmentation, addressing, routing, filtering, ...)
 
-### VPC
+#### VPC
 
 The project needs a VPC with two availability zones for the EKS cluster, both private and public to access images from Docker Hub.
 
-## Compute (nodes, autoscaling, containers, orchestration,...)
+### Compute (nodes, autoscaling, containers, orchestration,...)
 
-### EKS
+#### EKS
 
 We use AWS EKS for easy deployment of the containers and orchestration.
 
-### EC2 and GPU nodegroups 
+#### EC2 and GPU nodegroups
 
 There are different nodegroups as we have to use specific GPU nodes for the ML-containers.
 
-### ALB/ELB
+#### ALB/ELB
 
 A load balancer will direct the incoming traffic to the cluster services.
 
-### Container
+#### Container
 
 **Frontend:** JS-based web interface for user interaction (Docker container)
 
@@ -102,21 +103,21 @@ A load balancer will direct the incoming traffic to the cluster services.
 
 **Text-To-Speech** Tortoise-TTS (Docker container)
 
-## Security (AAA, code, traffic, instances, ...)
+### Security (AAA, code, traffic, instances, ...)
 
-### IAM roles and policies
+#### IAM roles and policies
 
 One IAM role will be responsible for the deployment and management of the cluster, and each DevOps team mate can assume this role.
 
-## Observability (metrics, logs, traces, alerts)
+### Observability (metrics, logs, traces, alerts)
 
-### Cloudwatch, Grafana, Prometheus
+#### Cloudwatch, Grafana, Prometheus
 
 A managed Grafana instance will collect all metrics and send alert in case of errors during the build process, cluster runtime or application error.
 
-## Continuity & Recovery (redundancy, failover, backup, BCP/DRP)
+### Continuity & Recovery (redundancy, failover, backup, BCP/DRP)
 
-### Redundancy and Backup
+#### Redundancy and Backup
 
 For redundancy it should be possible to point the domains DNS to a load balancer in another region. If the regional datacenter burns down, we could still continue service from another region.
 

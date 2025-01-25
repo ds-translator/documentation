@@ -1,4 +1,4 @@
-# Context
+## Context
 
 The project is a 6-week DevOps initiative to develop and deploy a speech-to-speech translation webservice. The service will allow users to input speech in one language and receive translated speech in another language.
 
@@ -12,11 +12,11 @@ The project will showcase DevOps capabilities, including:
 
 Its expected to define everything by code (IaC), to have a reproducible and sustainable solution with easy maintenance.
 
-# Simplified schematics
+## Simplified schematics
 
 ![Diagram](/images/simplified.png)
 
-## Stakeholders
+### Stakeholders
 
 **DevOps Engineers:** Reproducible infrastructure, easy maintenance, monitoring of all components.
 
@@ -28,7 +28,7 @@ Its expected to define everything by code (IaC), to have a reproducible and sust
 
 **Users:** Always reachable website, fast and accurate translations, data privacy.
 
-# Objectives
+## Objectives
 
 **Primary Objective:** Deliver a scalable, secure, and high-availability speech-to-speech translation webservice within 6 weeks.
 
@@ -41,7 +41,7 @@ Its expected to define everything by code (IaC), to have a reproducible and sust
 - Achieve data security through encryption and private networks.
 - Support scalability to handle increasing user loads.
 
-# Scope
+## Scope
 
 The project will deliver a speech-to-speech translation webservice with the following features:
 
@@ -53,21 +53,22 @@ The project will deliver a speech-to-speech translation webservice with the foll
 - Self-Sustained: No reliance on external translation APIs; all services built in-house.
 
 ### Phase 1: Setup
+
 Set up project management tools, GitHub repositories, and cloud accounts.
 Deliverables: Project board, repository structure, and AWS accounts ready.
 
 ### Phase 2: Development
-	
+
 Adapt source code, set up Docker images, and implement CI/CD pipelines.
 Deliverables: Docker images for all microservices, GitHub Actions CI/CD pipeline.
 
 ### Phase 3: Staging
-	
+
 Set up cloud infrastructure for staging/release branch.
 Deliverables: Staging environment deployed and tested.
 
 ### Phase 4: Monitoring
-	
+
 Integrate cloud monitoring and alerting tools.
 Deliverables: AWS CloudWatch, Grafana, and alerting systems operational.
 
@@ -76,7 +77,7 @@ Deliverables: AWS CloudWatch, Grafana, and alerting systems operational.
 Deploy and monitor the production environment.
 Deliverables: Production environment live, monitored, and scalable.
 
-# Functional Requirements
+## Functional Requirements
 
 **Users:** Input speech in one language and receive translated speech in another.
 Access the service via a web interface.
@@ -88,7 +89,7 @@ VCS and backup of code.
 **Customer:** Real-time notifications for downtime or failures.
 Scalable infrastructure to handle user growth.
 
-# Non-Functional Requirements
+## Non-Functional Requirements
 
 - Performance: Response time < 2 seconds under normal load.
 
@@ -97,4 +98,3 @@ Scalable infrastructure to handle user growth.
 - Security: TLS encryption, private subnets, and role-based access control.
 
 - Availability: 99.9% uptime for the production environment.
-
