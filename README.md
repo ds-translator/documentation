@@ -10,4 +10,4 @@ The Confluence user id and API token is stored as an environment secret in this 
 
 We use an adaptation of [GitHub to Confluence Publisher](https://github.com/andygolubev/github-to-confluence-publisher) and [Python diagrams](https://diagrams.mingrammer.com/).
 
-The markdown files will be linted with `pymarkdown -d MD041,MD013,MD024 scan pages`
+The markdown files will be linted in the workflow with `pymarkdown -d MD041,MD013,MD024 scan pages`

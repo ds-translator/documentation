@@ -29,7 +29,9 @@ jobs:
         ls -la
         python -m pip install --upgrade pip
         pip install -r ./requirements.txt
-
+    - name: Check MD syntax
+      run: |
+        pymarkdown -d MD041,MD013,MD024 scan pages
     - name: Publish MD files to the Confluence space
       env:
         LOGIN: ${{ secrets.ATLASSIAN_USERNAME }}
