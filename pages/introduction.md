@@ -12,7 +12,7 @@ The project will showcase DevOps capabilities, including:
 - monitoring
 - source code management
 
-# Deadlines
+## Deadlines
 
 ### Week 4 (20.01.-26.01.), Step 1: Specification & organization
 
