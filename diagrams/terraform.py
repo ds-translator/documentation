@@ -37,8 +37,9 @@ with Diagram("", filename="./images/terraform", direction="TB", outformat="png",
         iam = IDAccess("IAM role")
 
         with Cluster("AWS"):
-            s3 = FileStorage("Terraform state\nfile (S3)")
             infrastructure = Infrastructure("Infrastructure")
+            s3 = FileStorage("Terraform state\nfile (S3)")
+            
     
         [team.janod, team.julian, team.patrick] >> iam
         

@@ -2,7 +2,8 @@ Define the context, the objectives, as well as the scope of the project
 
 # Context
 
-The project is a 6-week DevOps initiative to develop and deploy a speech-to-speech translation webservice. The service will allow users to input speech in one language and receive translated speech in another language. 
+The project is a 6-week DevOps initiative to develop and deploy a speech-to-speech translation webservice. 
+The service will allow users to input speech in one language and receive translated speech in another language. 
 
 The project will showcase DevOps capabilities, including:
 
