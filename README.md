@@ -21,4 +21,3 @@ The markdown files will be linted in the workflow with `pymarkdown --disable-rul
 | MD041       | First line in file should be a top-level heading.| In Confluence there is a heading on every page already.|
 | MD013       | Line length | For a documentation in Confluence the 80-character limit does not make much sense.|
 | MD024       | Multiple headings cannot contain the same content.| Subheadings in different sections should indeed be able to contain the same content.
-

@@ -32,6 +32,7 @@ jobs:
     - name: Check MD syntax
       run: |
         pymarkdown -d MD041,MD013,MD024 scan pages
+        pymarkdown -d MD041,MD013,MD024 scan .
     - name: Publish MD files to the Confluence space
       env:
         LOGIN: ${{ secrets.ATLASSIAN_USERNAME }}
