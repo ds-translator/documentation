@@ -19,6 +19,7 @@ class Team:
     def __init__(self):
         self.janod = User("Janods IAM account")
         self.julian = User("Julians IAM account")
+        self.loay = User("Loays IAM account")
         self.patrick = User("Patricks IAM account")  
 
 with Diagram("", filename="./images/terraform", direction="TB", outformat="png", show=False, graph_attr=graph_attr):
